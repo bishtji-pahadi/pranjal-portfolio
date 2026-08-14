@@ -1,71 +1,69 @@
-// Portfolio Data Configuration - Easily edit your personal details here!
+// Portfolio Data Configuration for Pranjal Bisht
 const portfolioData = {
   personal: {
-    name: "Alex Morgan", // Replace with your name
-    title: "Linux System Administrator & DevOps Enthusiast",
-    tagline: "Architecting resilient infrastructure, automating workflows, and securing high-availability Linux environments.",
-    location: "Global / Remote",
-    email: "alex.morgan.sysadmin@example.com",
+    name: "Pranjal Bisht",
+    title: "Linux System Administrator",
+    tagline: "Dedicated Linux Administrator with hands-on expertise in managing enterprise RHEL, CentOS & virtualized environments. Specializing in high-availability systems, LVM storage architecture, Ansible automation, and proactive L2/L3 infrastructure troubleshooting.",
+    location: "Indore, India",
+    email: "pranjalbishtji@gmail.com",
+    phone: "+91 94248-84630",
     github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    uptime: "99.99%",
-    kernel: "Linux 6.x / Enterprise Ready",
-    status: "Available for full-time roles & consulting"
+    linkedin: "https://www.linkedin.com/in/pranjal-bisht-772381234",
+    uptime: "99.9%",
+    kernel: "RHEL / CentOS / Enterprise Linux",
+    status: "Active Linux Administrator @ Tata Consultancy Services (TCS)"
   },
   
   metrics: [
-    { label: "Systems Managed", value: "250+", icon: "server" },
-    { label: "Infrastructure Uptime", value: "99.99%", icon: "activity" },
-    { label: "Automated Deployments", value: "1,200+", icon: "zap" },
-    { label: "Incident MTTR Reduction", value: "45%", icon: "shield-check" }
+    { label: "Production Uptime", value: "99.9%", icon: "activity" },
+    { label: "Enterprise Experience", value: "2+ Years", icon: "briefcase" },
+    { label: "Key OS Platforms", value: "RHEL & CentOS", icon: "server" },
+    { label: "Incident Resolution", value: "L2 / L3 Tier", icon: "shield-check" }
   ],
 
   skillCategories: [
     {
-      name: "Linux & OS Administration",
+      name: "Operating Systems & Platforms",
       icon: "terminal",
       skills: [
-        { name: "RHEL / Rocky / CentOS", level: "Expert" },
-        { name: "Ubuntu / Debian Server", level: "Expert" },
-        { name: "Kernel Tuning & sysctl", level: "Advanced" },
-        { name: "systemd & Process Mgmt", level: "Expert" },
-        { name: "LVM, ZFS & RAID Storage", level: "Advanced" },
-        { name: "Package Management (yum/apt/dnf)", level: "Expert" }
+        { name: "Red Hat Enterprise Linux (RHEL)", level: "Expert" },
+        { name: "CentOS & SUSE Linux", level: "Expert" },
+        { name: "Ubuntu Server (20.04 / 22.04)", level: "Expert" },
+        { name: "IBM AIX Systems", level: "Intermediate" },
+        { name: "Windows Server Environment", level: "Intermediate" }
       ]
     },
     {
-      name: "Networking & Security",
-      icon: "shield",
-      skills: [
-        { name: "iptables / nftables / UFW", level: "Advanced" },
-        { name: "SELinux & AppArmor", level: "Advanced" },
-        { name: "SSH Hardening & Fail2ban", level: "Expert" },
-        { name: "Nginx / Apache Reverse Proxy", level: "Expert" },
-        { name: "DNS (BIND9, Route53)", level: "Advanced" },
-        { name: "SSL/TLS & PKI Management", level: "Expert" },
-        { name: "VPN (WireGuard, OpenVPN)", level: "Advanced" }
-      ]
-    },
-    {
-      name: "DevOps & Automation",
+      name: "Automation & Scripting",
       icon: "cpu",
       skills: [
-        { name: "Bash & POSIX Shell Scripting", level: "Expert" },
-        { name: "Ansible Playbooks & Roles", level: "Advanced" },
-        { name: "Docker & Containerd", level: "Advanced" },
-        { name: "Kubernetes / K3s", level: "Intermediate" },
-        { name: "Git & CI/CD Pipelines", level: "Advanced" },
-        { name: "Terraform (IaC)", level: "Intermediate" }
+        { name: "Bash Shell Scripting", level: "Expert" },
+        { name: "Ansible Playbooks & Automation", level: "Advanced" },
+        { name: "Automated Patch Management", level: "Expert" },
+        { name: "Cron & Maintenance Automation", level: "Expert" },
+        { name: "Offline Database Backup Automation", level: "Advanced" }
       ]
     },
     {
-      name: "Monitoring & Observability",
-      icon: "bar-chart-2",
+      name: "Storage & Virtualization",
+      icon: "hard-drive",
       skills: [
-        { name: "Prometheus & Grafana", level: "Advanced" },
-        { name: "ELK Stack / Loki Log Parsing", level: "Advanced" },
-        { name: "Nagios / Zabbix", level: "Advanced" },
-        { name: "Cron, logrotate & Backup Automation", level: "Expert" }
+        { name: "Logical Volume Management (LVM)", level: "Expert" },
+        { name: "VMware vSphere (VM Lifecycle)", level: "Advanced" },
+        { name: "Disk Partitioning & Swap Optimization", level: "Expert" },
+        { name: "Dell EMC NetWorker", level: "Advanced" },
+        { name: "Data Domain Storage OS", level: "Advanced" }
+      ]
+    },
+    {
+      name: "Troubleshooting, Security & Tools",
+      icon: "shield",
+      skills: [
+        { name: "L2/L3 Incident & RCA (top, iostat, netstat, dmesg)", level: "Expert" },
+        { name: "Security Audit & User Monitoring (who, last)", level: "Expert" },
+        { name: "ServiceNow (ITSM / Incident Mgmt)", level: "Advanced" },
+        { name: "SSH, PuTTY, WinSCP & Secure Protocols", level: "Expert" },
+        { name: "Vulnerability Remediation", level: "Advanced" }
       ]
     }
   ],
@@ -73,97 +71,97 @@ const portfolioData = {
   projects: [
     {
       id: "proj-1",
-      title: "Automated Multi-Node Linux Cluster Hardening",
+      title: "Automated Patch Management & Compliance via Ansible",
       category: "automation",
-      tag: "Security & Ansible",
-      summary: "Created idempotent Ansible roles implementing CIS Benchmark Level 2 hardening across 50+ Ubuntu and RHEL nodes with automated audit reporting.",
+      tag: "Automation & Patching",
+      summary: "Architected automated patch management and vulnerability remediation workflows using Ansible Playbooks across multi-node RHEL, CentOS, and SUSE production clusters.",
       features: [
-        "Automated SSH certificate authentication and root lockout",
-        "SELinux/AppArmor automated profile enforcement",
-        "Kernel parameter hardening for network flood mitigation",
-        "Automated daily vulnerability scanning and Slack alerting"
+        "Automated quarterly OS update cycles reducing maintenance downtime",
+        "Pre-patching filesystem and snapshot state validation",
+        "Automated service restarts and post-update health verification",
+        "Standardized configuration across heterogeneous Linux distributions"
       ],
-      techStack: ["Ansible", "RHEL 9", "Ubuntu 22.04", "Bash", "CIS Benchmark"],
+      techStack: ["Ansible", "RHEL", "CentOS", "Bash", "ServiceNow"],
       githubUrl: "https://github.com",
       demoUrl: ""
     },
     {
       id: "proj-2",
-      title: "High-Availability Load-Balanced Web Infrastructure",
-      category: "networking",
-      tag: "High Availability",
-      summary: "Designed and deployed a fault-tolerant infrastructure with Keepalived, Nginx reverse proxy cluster, and automated SSL certificate rotation.",
+      title: "Production Ubuntu Fleet OS Migration (20.04 to 22.04 LTS)",
+      category: "linux",
+      tag: "OS Upgrade & Migration",
+      summary: "Successfully executed end-to-end operating system upgrades from Ubuntu 20.04 LTS to 22.04 LTS across production server instances with zero data loss.",
       features: [
-        "VRRP Virtual IP failover with zero downtime",
-        "Dynamic rate limiting and geo-blocking with Nginx",
-        "Automated ACME / Let's Encrypt renewal pipeline",
-        "Real-time health check probes and self-healing daemon"
+        "Conducted thorough dependency, kernel compatibility, and repository analysis",
+        "Executed staged testing and rollback mechanisms in isolated environments",
+        "Validated critical background daemons, network routing, and firewall rules post-upgrade",
+        "Completed migration with zero unplanned application downtime"
       ],
-      techStack: ["Keepalived", "Nginx", "HAProxy", "Let's Encrypt", "Systemd"],
+      techStack: ["Ubuntu 22.04 LTS", "Linux Kernel", "Bash", "SSH", "LVM"],
       githubUrl: "https://github.com",
       demoUrl: ""
     },
     {
       id: "proj-3",
-      title: "Enterprise Observability & Real-Time Alerting Stack",
-      category: "monitoring",
-      tag: "Monitoring & Logs",
-      summary: "Constructed complete telemetry and centralized logging for a distributed server fleet using Prometheus, Node Exporter, Grafana, and Alertmanager.",
+      title: "Data Domain Operating System Upgrade (8.3.1.20 to 8.3.1.30)",
+      category: "storage",
+      tag: "Storage & Backup Infrastructure",
+      summary: "Spearheaded the successful upgrade of Dell EMC Data Domain storage operating system from version 8.3.1.20 to 8.3.1.30 for enterprise data preservation.",
       features: [
-        "Custom Node Exporter metrics for specific background services",
-        "Multi-tier Grafana dashboards with executive and on-call views",
-        "Alertmanager rules for disk saturation, CPU throttling, and latency spikes",
-        "Logstash parsing pipelines for centralized security log analysis"
+        "Pre-upgrade health checks of storage pools, MTrees, and deduplication engine",
+        "Coordinated with enterprise storage teams to schedule minimal disruption windows",
+        "Verified replication streams, backup data integrity, and system logs post-upgrade",
+        "Maintained continuous backup readiness with Dell EMC NetWorker"
       ],
-      techStack: ["Prometheus", "Grafana", "Alertmanager", "Node Exporter", "Loki"],
+      techStack: ["Data Domain OS", "Dell EMC NetWorker", "Storage Architecture", "CLI"],
       githubUrl: "https://github.com",
       demoUrl: ""
     },
     {
       id: "proj-4",
-      title: "Zero-Downtime Backup & Disaster Recovery Pipeline",
-      category: "automation",
-      tag: "Backup & Recovery",
-      summary: "Built automated snapshot, incremental backup, and verification system with Restic, Borg, and encrypted cloud offloading with automated test restores.",
+      title: "LVM Storage Architecture & Dynamic Capacity Optimization",
+      category: "storage",
+      tag: "LVM & Filesystem Management",
+      summary: "Implemented scalable Logical Volume Management (LVM) architectures to dynamically extend volumes, partition disks, and manage swap memory without service disruption.",
       features: [
-        "Deduplicated and end-to-end encrypted storage archives",
-        "Weekly automated dry-run sandbox restore verification",
-        "Discord/Email status webhooks upon backup completion or anomaly",
-        "Zero-impact LVM snapshotting for live database consistency"
+        "Live volume group expansion (vgextend) and logical volume resize (lvextend)",
+        "Proactive monitoring of high I/O filesystem thresholds to avoid saturation",
+        "Architected optimized swap allocation strategies for memory-heavy workloads",
+        "Enforced clean storage partitioning guidelines across virtual machines"
       ],
-      techStack: ["BorgBackup", "Restic", "LVM Snapshots", "Bash", "AWS S3"],
+      techStack: ["LVM", "xfs / ext4", "VMware vSphere", "iostat", "Bash"],
       githubUrl: "https://github.com",
       demoUrl: ""
     },
     {
       id: "proj-5",
-      title: "Containerized Microservices on Lightweight Kubernetes (K3s)",
-      category: "devops",
-      tag: "Containers & K8s",
-      summary: "Configured lightweight production-ready K3s cluster on bare-metal Linux nodes with MetalLB, Traefik ingress, and persistent NFS volume provisioners.",
+      title: "System Performance Profiling & L2/L3 Incident Resolution Suite",
+      category: "monitoring",
+      tag: "RCA & Performance Diagnostics",
+      summary: "Established standard operating procedures and diagnostic workflows for deep-dive CPU, memory, process, and network bottleneck evaluations during critical incidents.",
       features: [
-        "Bare-metal load balancing via MetalLB in Layer 2 mode",
-        "Automated secret management with HashiCorp Vault integration",
-        "Continuous deployment via GitHub Actions & webhook triggers",
-        "Resource quotas and network policies restricting namespace traffic"
+        "Root cause analysis for process hangs, memory starvation, and high load averages",
+        "In-depth analysis using top, vmstat, iostat, netstat, dmesg, and system logs",
+        "Audited system security and unauthorized access tracking via who and last",
+        "Documented detailed post-mortem RCA reports in ServiceNow"
       ],
-      techStack: ["K3s", "Docker", "MetalLB", "Traefik", "Helm", "GitOps"],
+      techStack: ["Linux Performance Tools", "dmesg", "ServiceNow", "Systemd", "Syslog"],
       githubUrl: "https://github.com",
       demoUrl: ""
     },
     {
       id: "proj-6",
-      title: "Linux Server Performance Profiling & Tuning Toolkit",
-      category: "linux",
-      tag: "Performance Tuning",
-      summary: "Engineered an open-source suite of diagnosis scripts utilizing eBPF, perf, and sysstat to isolate CPU lockups, I/O bottlenecks, and network buffer bloat.",
+      title: "Automated Maintenance & Offline Database Backup Pipelines",
+      category: "automation",
+      tag: "Bash & Scripting",
+      summary: "Authored modular, robust Bash shell scripts to automate routine maintenance, log compression, VM provisioning records, and CLI database backup routines.",
       features: [
-        "One-click diagnosis collecting flame graphs and I/O traces",
-        "Automated recommendation engine for sysctl / hugepages tuning",
-        "Memory leak detector with process cgroup monitoring",
-        "HTML diagnostic report generation with charts"
+        "Automated backup triggers for databases and IBM AIX system files",
+        "Log archiving and automated disk space recovery routines",
+        "Scheduled verification of Dell EMC NetWorker backup completion status",
+        "Error alerting and execution logging for all background cron jobs"
       ],
-      techStack: ["eBPF / BCC", "perf", "sysstat", "Bash", "Python"],
+      techStack: ["Bash Scripting", "Cron", "IBM AIX", "Dell EMC NetWorker", "Linux CLI"],
       githubUrl: "https://github.com",
       demoUrl: ""
     }
@@ -171,70 +169,57 @@ const portfolioData = {
 
   certifications: [
     {
-      title: "Red Hat Certified System Administrator (RHCSA)",
-      issuer: "Red Hat",
-      date: "Active / Verified",
-      badge: "RHCSA",
-      description: "Core system administration skills across Red Hat Enterprise Linux environments."
+      title: "Linux Red Hat Certified System Administrator (RHCSA – EX200)",
+      issuer: "Udemy / Red Hat Training Curriculum",
+      date: "Completed Coursework & Hands-on Labs",
+      badge: "RHCSA (EX200)",
+      description: "Comprehensive administration of Red Hat Enterprise Linux, user/group security, storage management, LVM, systemd services, and network configuration."
     },
     {
-      title: "Linux Foundation Certified System Administrator (LFCS)",
-      issuer: "Linux Foundation",
-      date: "Active / Verified",
-      badge: "LFCS",
-      description: "Comprehensive administration, storage management, and networking on live Linux systems."
-    },
-    {
-      title: "Certified Kubernetes Administrator (CKA)",
-      issuer: "Cloud Native Computing Foundation",
-      date: "In Progress / Active",
-      badge: "CKA",
-      description: "Cluster configuration, networking, storage, security, and troubleshooting."
-    },
-    {
-      title: "AWS Certified Solutions Architect / SysOps",
-      issuer: "Amazon Web Services",
-      date: "Active",
-      badge: "AWS",
-      description: "Cloud infrastructure deployment, VPC networking, and high availability systems."
+      title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      issuer: "Microsoft",
+      date: "Verified Certification",
+      badge: "Azure (AZ-900)",
+      description: "Foundational knowledge of cloud concepts, Azure core services, security, privacy, compliance, and cloud infrastructure management."
     }
   ],
 
   experience: [
     {
-      role: "Linux System Administrator",
-      company: "Enterprise Cloud Solutions",
-      period: "2023 - Present",
-      location: "Remote / Hybrid",
+      role: "Linux Administrator",
+      company: "Tata Consultancy Services Limited (TCS)",
+      period: "May 2024 – Present",
+      location: "Noida, India",
       highlights: [
-        "Administer 200+ physical and virtual Linux servers running RHEL and Ubuntu.",
-        "Automated patching and provisioning with Ansible, cutting maintenance windows by 60%.",
-        "Maintained 99.99% infrastructure uptime with 24/7 on-call incident response and root-cause analysis.",
-        "Hardened edge servers with fail2ban, nftables, and automated SSL management."
+        "Engineered and maintained scalable RHEL, CentOS, & SUSE Linux environments within virtualized architecture, ensuring 99.9% uptime & high availability.",
+        "Optimized filesystem utilization by architecting Logical Volume Management (LVM) solutions & implementing proactive disk partitioning & swap management strategies.",
+        "Streamlined server lifecycle management by executing end-to-end commissioning & decommissioning of VMs on VMware vSphere, while maintaining precise infrastructure inventory logs.",
+        "Reduced manual overhead by authoring robust Bash shell scripts to automate recurring system upgrades, patching & configuration tasks.",
+        "Ensured continuous compliance by auditing system security logs & monitoring user activity (using who, last), proactively mitigating potential security risks.",
+        "Spearheaded complex L2/L3 troubleshooting for production environments, utilizing advanced performance monitoring tools (top, iostat, netstat, dmesg) to resolve critical system incidents.",
+        "Executed precise root cause analysis (RCA) by conducting deep-dive CPU, memory & process evaluations, resulting in faster resolution times for infrastructure bottlenecks.",
+        "Implemented quarterly patch management and vulnerability remediation cycles, automating updates via Ansible to maintain a secure & compliant Linux infrastructure.",
+        "Oversaw mission-critical data integrity by managing backup & restore operations via Dell EMC NetWorker and performing database backup operations via CLI, ensuring high availability.",
+        "Conducted basic monitoring and administrative tasks on IBM AIX systems & database for initiating offline backups."
       ]
+    }
+  ],
+
+  education: [
+    {
+      degree: "Bachelor's Degree in Petrochemical Technology",
+      institution: "University Institute of Technology – RGPV, Bhopal",
+      period: "2019 – 2023"
     },
     {
-      role: "Junior Systems & Network Administrator",
-      company: "TechNet Infrastructure",
-      period: "2021 - 2023",
-      location: "On-site",
-      highlights: [
-        "Configured and maintained DNS, DHCP, NFS, and Samba file storage across heterogeneous client networks.",
-        "Implemented automated daily backup routines with BorgBackup and verified test restores quarterly.",
-        "Built custom Bash monitoring scripts sending metrics into Prometheus & Grafana.",
-        "Provided L2/L3 Linux technical support and hardware diagnostics for server racks."
-      ]
+      degree: "Senior Secondary (12th)",
+      institution: "St. Joseph's Convent Senior Secondary School, Ratlam",
+      period: "2017 – 2018"
     },
     {
-      role: "IT Support Specialist & Linux Lab Admin",
-      company: "University Computing Center",
-      period: "2019 - 2021",
-      location: "On-site",
-      highlights: [
-        "Managed 80+ dual-boot Linux workstations and configured LDAP network user authentication.",
-        "Created custom PXE network boot images for fast operating system rollouts.",
-        "Troubleshot network connectivity, SSH access, and user permission hierarchies."
-      ]
+      degree: "Higher Secondary (10th)",
+      institution: "St. Joseph's Convent Senior Secondary School, Ratlam",
+      period: "2015 – 2016"
     }
   ]
 };

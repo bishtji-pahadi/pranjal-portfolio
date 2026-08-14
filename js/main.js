@@ -1,5 +1,5 @@
 // ==========================================================================
-// Portfolio Logic & Interactive Elements
+// Portfolio Logic & Interactive Elements for Pranjal Bisht
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,7 +38,7 @@ function updateThemeIcon(theme) {
   if (icon) {
     icon.innerHTML = theme === 'dark' 
       ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>` 
-      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
   }
 }
 
@@ -54,12 +54,17 @@ function renderPortfolioData() {
   setText('hero-title', p.title);
   setText('hero-tagline', p.tagline);
   setText('contact-email-text', p.email);
+  setText('contact-phone-text', p.phone);
+  setText('contact-location-text', p.location);
   setText('uptime-badge-val', p.uptime);
   setText('system-status-val', p.status);
   
   const emailLink = document.getElementById('contact-email-link');
   if (emailLink) emailLink.href = `mailto:${p.email}`;
   
+  const phoneLink = document.getElementById('contact-phone-link');
+  if (phoneLink && p.phone) phoneLink.href = `tel:${p.phone.replace(/\s+/g, '')}`;
+
   const githubLink = document.getElementById('github-link');
   if (githubLink) githubLink.href = p.github;
   
@@ -137,6 +142,18 @@ function renderPortfolioData() {
       </div>
     `).join('');
   }
+
+  // Education Grid
+  const educationContainer = document.getElementById('education-container');
+  if (educationContainer && portfolioData.education) {
+    educationContainer.innerHTML = portfolioData.education.map(edu => `
+      <div class="cert-card">
+        <span class="cert-badge" style="background: rgba(14, 165, 233, 0.15); color: var(--accent-secondary); border-color: rgba(14, 165, 233, 0.3);">${edu.period}</span>
+        <h3 class="cert-title">${edu.degree}</h3>
+        <p class="cert-issuer">${edu.institution}</p>
+      </div>
+    `).join('');
+  }
 }
 
 function setText(id, value) {
@@ -168,11 +185,10 @@ function renderProjects(projectsList) {
           ${p.techStack.map(t => `<span class="tech-pill">${t}</span>`).join('')}
         </div>
         <div class="project-footer">
-          <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            View Repo
-          </a>
-          <span class="text-dim" style="font-family: var(--font-mono); font-size: 0.75rem;">Production Ready</span>
+          <span class="text-dim" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-primary);">
+            ✓ Verified Enterprise Implementation
+          </span>
+          <span class="text-dim" style="font-family: var(--font-mono); font-size: 0.75rem;">Production Grade</span>
         </div>
       </div>
     </div>
@@ -261,73 +277,82 @@ function initTerminal() {
   const commands = {
     'help': () => `
 Available Commands:
-  <span class="t-output-highlight">whoami</span>        - Display SysAdmin profile & role
-  <span class="t-output-highlight">uptime</span>        - Show current system uptime & load
-  <span class="t-output-highlight">uname -a</span>      - Kernel & OS environment information
-  <span class="t-output-highlight">skills</span>        - List core sysadmin competencies
-  <span class="t-output-highlight">projects</span>      - View high-impact infrastructure projects
-  <span class="t-output-highlight">certs</span>         - Display verified certifications
-  <span class="t-output-highlight">status</span>        - Check infrastructure health status
-  <span class="t-output-highlight">contact</span>       - Get direct email and social endpoints
-  <span class="t-output-highlight">neofetch</span>      - Display system summary ASCII art
+  <span class="t-output-highlight">whoami</span>        - Display Linux Administrator profile & current role
+  <span class="t-output-highlight">uptime</span>        - Show production infrastructure uptime (99.9%)
+  <span class="t-output-highlight">uname -a</span>      - Kernel & OS environment (RHEL / CentOS / Ubuntu)
+  <span class="t-output-highlight">skills</span>        - Technical skills matrix (LVM, Ansible, Bash, vSphere)
+  <span class="t-output-highlight">experience</span>    - Tata Consultancy Services (TCS) background
+  <span class="t-output-highlight">projects</span>      - OS upgrades & Data Domain infrastructure projects
+  <span class="t-output-highlight">certs</span>         - RHCSA (EX200) & Microsoft Azure (AZ-900)
+  <span class="t-output-highlight">education</span>     - University & academic background
+  <span class="t-output-highlight">contact</span>       - Direct email, phone number & LinkedIn profile
+  <span class="t-output-highlight">neofetch</span>      - System summary & specs ASCII art
   <span class="t-output-highlight">clear</span>         - Clear the terminal console
 `,
     'whoami': () => `
-<span class="t-output-cyan">User:</span> ${portfolioData.personal.name}
+<span class="t-output-cyan">Name:</span> ${portfolioData.personal.name}
 <span class="t-output-cyan">Role:</span> ${portfolioData.personal.title}
+<span class="t-output-cyan">Company:</span> Tata Consultancy Services (TCS), Noida
 <span class="t-output-cyan">Location:</span> ${portfolioData.personal.location}
-<span class="t-output-cyan">Status:</span> ${portfolioData.personal.status}
+<span class="t-output-cyan">Experience:</span> 2+ Years in Production Support & Administration
 `,
     'uptime': () => `
-14:32:00 up 942 days, 18:45, 1 user, load average: 0.08, 0.04, 0.01
-[OK] Infrastructure Uptime: <span class="t-output-highlight">99.99%</span>
+16:45:12 up 784 days, 12:20, 1 active admin, load average: 0.05, 0.03, 0.01
+[OK] Production Environment Uptime: <span class="t-output-highlight">99.9% High Availability</span>
 `,
     'uname -a': () => `
-Linux sysadmin-node1 6.6.14-enterprise-lts #1 SMP PREEMPT_DYNAMIC x86_64 GNU/Linux
+Linux rhel-prod-node01 5.14.0-362.8.1.el9_3.x86_64 #1 SMP PREEMPT_DYNAMIC GNU/Linux
 `,
     'skills': () => `
 <table class="t-table">
-  <tr><th>Domain</th><th>Key Tools</th></tr>
-  <tr><td>OS & Kernel</td><td>RHEL, Ubuntu, Debian, systemd, LVM, ZFS</td></tr>
-  <tr><td>Security & Net</td><td>iptables, nftables, SELinux, Nginx, WireGuard</td></tr>
-  <tr><td>Automation</td><td>Bash, Ansible, Docker, K3s/Kubernetes, GitOps</td></tr>
-  <tr><td>Observability</td><td>Prometheus, Grafana, Alertmanager, ELK</td></tr>
+  <tr><th>Category</th><th>Technologies & Tools</th></tr>
+  <tr><td>Operating Systems</td><td>RHEL, CentOS, Ubuntu, SUSE Linux, IBM AIX, Windows</td></tr>
+  <tr><td>Automation</td><td>Ansible Playbooks, Bash Shell Scripting, Cron, Logrotate</td></tr>
+  <tr><td>Storage & Virtualization</td><td>LVM, VMware vSphere, EMC NetWorker, Data Domain OS</td></tr>
+  <tr><td>Monitoring & Support</td><td>top, iostat, netstat, dmesg, ServiceNow, who/last, SSH</td></tr>
 </table>
 `,
+    'experience': () => `
+<span class="t-output-highlight">Tata Consultancy Services Limited (TCS)</span> | Noida, India
+<span class="t-output-cyan">Role:</span> Linux Administrator (May 2024 – Present)
+- Engineered scalable RHEL, CentOS & SUSE Linux environments (99.9% uptime).
+- Architected LVM storage solutions, dynamic disk partitioning & swap management.
+- VM provisioning & decommissioning across VMware vSphere architecture.
+- Authored Bash scripts & Ansible playbooks for automated quarterly patching.
+- Led L2/L3 troubleshooting with top, iostat, netstat, dmesg for root cause analysis (RCA).
+- Managed backup & restore operations using Dell EMC NetWorker and CLI database tasks.
+`,
     'projects': () => `
-Found ${portfolioData.projects.length} featured infrastructure repositories:
+Found ${portfolioData.projects.length} highlighted infrastructure deliverables:
 ${portfolioData.projects.map((p, idx) => `[${idx + 1}] <span class="t-output-highlight">${p.title}</span> (${p.tag})`).join('<br>')}
 `,
     'certs': () => `
-Verified Credentials:
-${portfolioData.certifications.map(c => `▸ <span class="t-output-cyan">${c.badge}</span>: ${c.title} (${c.issuer})`).join('<br>')}
+Verified Certifications & Technical Training:
+${portfolioData.certifications.map(c => `▸ <span class="t-output-cyan">${c.badge}</span>: ${c.title} — ${c.issuer}`).join('<br>')}
 `,
-    'status': () => `
-[System Diagnostics]
-● nginx.service         - <span class="t-output-highlight">active (running)</span>
-● keepalived.service    - <span class="t-output-highlight">active (master)</span>
-● prometheus.service    - <span class="t-output-highlight">active (collecting)</span>
-● fail2ban.service      - <span class="t-output-highlight">active (0 threats pending)</span>
-Memory Usage: 3.2G / 32G (10%) | Root Disk: 24% used
+    'education': () => `
+Academic Background:
+${portfolioData.education.map(e => `▸ <span class="t-output-highlight">${e.degree}</span> (${e.period})<br>  ${e.institution}`).join('<br>')}
 `,
     'contact': () => `
 Direct Email : <a href="mailto:${portfolioData.personal.email}" class="t-output-highlight">${portfolioData.personal.email}</a>
-GitHub       : <a href="${portfolioData.personal.github}" target="_blank" class="t-output-cyan">${portfolioData.personal.github}</a>
+Phone        : <a href="tel:+919424884630" class="t-output-highlight">${portfolioData.personal.phone}</a>
 LinkedIn     : <a href="${portfolioData.personal.linkedin}" target="_blank" class="t-output-cyan">${portfolioData.personal.linkedin}</a>
+Location     : ${portfolioData.personal.location}
 `,
     'neofetch': () => `
 <span class="t-output-highlight">
-       .---.       </span><span class="t-output-cyan">sysadmin@infrastructure</span>
-<span class="t-output-highlight">      /     \\      </span>-----------------------
-<span class="t-output-highlight">     | () () |     </span><span class="t-output-cyan">OS:</span> Linux Enterprise LTS
-<span class="t-output-highlight">      \\  _  /      </span><span class="t-output-cyan">Host:</span> High-Availability Cluster
-<span class="t-output-highlight">       /___\\       </span><span class="t-output-cyan">Uptime:</span> 99.99% Reliability
-<span class="t-output-highlight">      /     \\      </span><span class="t-output-cyan">Shell:</span> bash 5.2 / zsh
-<span class="t-output-highlight">     / |   | \\     </span><span class="t-output-cyan">Role:</span> Linux SysAdmin & DevOps
-<span class="t-output-highlight">    /  |   |  \\    </span><span class="t-output-cyan">Status:</span> Ready for hire
+       .---.       </span><span class="t-output-cyan">pranjal@tcs-infrastructure</span>
+<span class="t-output-highlight">      /     \\      </span>----------------------------
+<span class="t-output-highlight">     | () () |     </span><span class="t-output-cyan">OS:</span> Red Hat Enterprise Linux 9 / CentOS
+<span class="t-output-highlight">      \\  _  /      </span><span class="t-output-cyan">Host:</span> VMware vSphere Virtual Platform
+<span class="t-output-highlight">       /___\\       </span><span class="t-output-cyan">Uptime:</span> 99.9% High Availability
+<span class="t-output-highlight">      /     \\      </span><span class="t-output-cyan">Shell:</span> bash 5.1 / Ansible Automation
+<span class="t-output-highlight">     / |   | \\     </span><span class="t-output-cyan">Role:</span> Linux Administrator
+<span class="t-output-highlight">    /  |   |  \\    </span><span class="t-output-cyan">Storage:</span> LVM & Dell EMC NetWorker
 `,
     'sudo rm -rf /': () => `
-<span class="t-output-warning">sudo: permission denied: Nice try! 😉 SELinux and root guards are actively enforcing security.</span>
+<span class="t-output-warning">sudo: permission denied: Root safeguards and security policies are actively enforced.</span>
 `
   };
 
@@ -339,7 +364,7 @@ LinkedIn     : <a href="${portfolioData.personal.linkedin}" target="_blank" clas
     entry.className = 't-line';
     entry.innerHTML = `
       <div class="t-prompt">
-        <span class="t-user">sysadmin</span><span class="t-symbol">@</span><span class="t-host">node01</span><span class="t-symbol">:</span><span class="t-path">~</span><span class="t-symbol">$</span>
+        <span class="t-user">pranjal</span><span class="t-symbol">@</span><span class="t-host">rhel-node01</span><span class="t-symbol">:</span><span class="t-path">~</span><span class="t-symbol">$</span>
         <span class="t-command">${escapeHtml(rawCmd)}</span>
       </div>
     `;
@@ -357,7 +382,7 @@ LinkedIn     : <a href="${portfolioData.personal.linkedin}" target="_blank" clas
     } else if (cmd === '') {
       outputDiv.innerHTML = '';
     } else {
-      outputDiv.innerHTML = `<span class="t-output-warning">bash: command not found: ${escapeHtml(rawCmd)}. Type <span class="t-output-highlight">'help'</span> to see valid commands.</span>`;
+      outputDiv.innerHTML = `<span class="t-output-warning">bash: command not found: ${escapeHtml(rawCmd)}. Type <span class="t-output-highlight">'help'</span> to see available commands.</span>`;
     }
 
     entry.appendChild(outputDiv);
@@ -412,11 +437,10 @@ function initContactForm() {
     const subject = document.getElementById('form-subject').value;
     const message = document.getElementById('form-message').value;
 
-    // Direct mailto fallback or Formspree integration
     const mailtoUrl = `mailto:${portfolioData.personal.email}?subject=${encodeURIComponent(`[Portfolio Inquiry] ${subject}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     
     status.className = 'form-status success';
-    status.textContent = 'Opening your email client to send message...';
+    status.textContent = 'Opening your email client to send transmission...';
     
     setTimeout(() => {
       window.location.href = mailtoUrl;
