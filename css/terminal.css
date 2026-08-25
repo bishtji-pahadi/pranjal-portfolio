@@ -1,0 +1,212 @@
+/* ======================================================================
+   Interactive Linux Terminal Simulator Styles
+   ====================================================================== */
+.terminal-wrapper {
+  background: #090d16;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.1);
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+}
+
+.terminal-header {
+  background: #111726;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.t-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.t-dot.close { background-color: #ef4444; }
+.t-dot.minimize { background-color: #f59e0b; }
+.t-dot.maximize { background-color: #10b981; }
+
+.terminal-title {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  letter-spacing: 0.5px;
+}
+
+.terminal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-clear-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.terminal-clear-btn:hover {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.terminal-body {
+  padding: 1.25rem;
+  min-height: 280px;
+  max-height: 380px;
+  overflow-y: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.terminal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+.t-welcome-banner {
+  color: #10b981;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  font-weight: 600;
+}
+
+.t-line {
+  margin-bottom: 0.5rem;
+}
+
+.t-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.t-user {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.t-host {
+  color: #0ea5e9;
+  font-weight: 700;
+}
+
+.t-path {
+  color: #f59e0b;
+}
+
+.t-symbol {
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.t-command {
+  color: #ffffff;
+}
+
+.t-output {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  color: #d1d5db;
+  padding-left: 0.5rem;
+  border-left: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.t-output-highlight {
+  color: #10b981;
+}
+
+.t-output-cyan {
+  color: #0ea5e9;
+}
+
+.t-output-warning {
+  color: #f59e0b;
+}
+
+.t-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+}
+
+.t-table th, .t-table td {
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.t-table th {
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.terminal-input-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.terminal-shortcuts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.75rem 1.25rem;
+  background: #0d121f;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.775rem;
+}
+
+.shortcut-label {
+  color: #9ca3af;
+  margin-right: 0.25rem;
+}
+
+.shortcut-chip {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #38bdf8;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.shortcut-chip:hover {
+  background: rgba(14, 165, 233, 0.2);
+  border-color: #38bdf8;
+}
