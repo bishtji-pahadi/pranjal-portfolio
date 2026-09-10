@@ -185,7 +185,7 @@ const portfolioData = {
       description: "Foundational knowledge of cloud concepts, Azure core services, security, privacy, compliance, and cloud infrastructure management."
     },
     {
-      title: "Microsoft Certified: Azure Fundamentals / Administrator (AZ-104)",
+      title: "Microsoft Certified: Azure Administrator Associate (AZ-104)",
       issuer: "Microsoft",
       date: "Certified / Coursework",
       badge: "Azure (AZ-104)",
